@@ -1,8 +1,18 @@
-var x=prompt('Vvedite uravnenie')
-var i=x.length;
+var str = prompt("Vvedite uravnenie");
+var x = 0;
 
-alert('Uravnenie '+x+ ' soderzit '+x.length+ ' simvolov'.match(/g\(\)/) ); // "g()")
-alert( 'x.match(/\w\.\w/) ');
-console.log('Kol-vo simbolov '+x.length);
+for(var i = 0; i < str.length; i++)
+{
+	if(str[i] == "(")
+		x++;
+	else 
+		if(str[i] == ")")
+		x--;
+	if(x < 0)
+		break;
+}
 
-
+if(x == 0)
+  alert(true);
+else
+  alert(false);
